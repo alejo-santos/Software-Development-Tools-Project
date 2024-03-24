@@ -23,7 +23,8 @@ Clone the repository:
     git clone https://github.com/jouna227/Software-Development-Tools-Project.git
 
 
-Navigate to the project directory: 
+Navigate to the project directory:
+    cd Software-Development-Tools-Project
    
 Install the required dependencies:
     pip install -r requirements.txt
@@ -37,9 +38,13 @@ Open your web browser and go to http://localhost:8501 to view the dashboard.
 
 Dataset
 
-The dataset used in this project contains information about car advertisements, including price, model year, mileage, condition, fuel type, and more. It is provided in a CSV file format (vehicles_us.csv").
+The dataset (`vehicles_us.csv`) contains information about car advertisements, including price, model year, mileage, condition, fuel type, etc., provided in CSV format.
 
 Contributors
 
     Alejo J. Santos
+
+### App URL
+
+URL of the app hosted on Render: [Car Advertisement Dashboard](https://software-development-tools-project-oqqz.onrender.com)
 
