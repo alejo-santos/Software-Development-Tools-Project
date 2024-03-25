@@ -8,6 +8,7 @@ try:
 
 except FileNotFoundError:
     print("File not found")
+    vehicles = pd.read_csv("/Software-Development-Tools-Project/vehicles_us.csv")
 
 # Main title
 st.title('Car Advertisement Dashboard')
