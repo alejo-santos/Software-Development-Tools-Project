@@ -3,7 +3,11 @@ import pandas as pd
 import plotly.express as px
 
 # Read the dataset
-vehicles = pd.read_csv("/workspaces/Software-Development-Tools-Project/vehicles_us.csv")
+try:
+    vehicles = pd.read_csv("/workspaces/Software-Development-Tools-Project/vehicles_us.csv")
+
+except FileNotFoundError:
+    print("File not found")
 
 # Main title
 st.title('Car Advertisement Dashboard')
