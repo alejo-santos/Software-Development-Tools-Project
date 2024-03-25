@@ -48,3 +48,5 @@ Contributors
 
 URL of the app hosted on Render: [Car Advertisement Dashboard](https://software-development-tools-project-oqqz.onrender.com)
 
+(https://render.com/docs/web-services#port-detection)
+
