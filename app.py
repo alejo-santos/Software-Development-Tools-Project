@@ -20,10 +20,10 @@ st.header('Dataset Overview')
 st.write(vehicles)
 
 # Filter by vehicle make
-selected_make = st.selectbox('Select a Vehicle Make', vehicles['manufacturer'].unique())
+selected_make = st.selectbox('Select a Vehicle Make', vehicles['model'].unique())
 
 # Filtered dataset based on selected make
-filtered_vehicles = vehicles[vehicles['manufacturer'] == selected_make]
+filtered_vehicles = vehicles[vehicles['model'] == selected_make]
 
 # Histogram of Price
 st.header('Histogram of Price')
