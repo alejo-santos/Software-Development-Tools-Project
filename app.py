@@ -20,7 +20,7 @@ st.header('Dataset Overview')
 st.write(vehicles)
 
 # Filter by vehicle make
-selected_make = st.selectbox('Select a Vehicle Make', vehicles['model'].unique())
+selected_make = st.selectbox('Select a Vehicle Make', vehicles['model','price'].unique())
 
 # Filtered dataset based on selected make
 filtered_vehicles = vehicles[vehicles['model'] == selected_make]
