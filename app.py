@@ -20,17 +20,17 @@ st.header('Dataset Overview')
 st.write(vehicles)
 
 # Filter by vehicle make
-selected_make = st.selectbox('Select a Vehicle Make', vehicles['model','price'].unique())
+selected_make = st.selectbox('Select a Vehicle Make', vehicles['model'].unique())
 
 # Filtered dataset based on selected make
 filtered_vehicles = vehicles[vehicles['model'] == selected_make]
 
 # Histogram of Price
-st.header('Histogram of Price')
+st.header('Histogram of Models')
 
 # Check if filtered_vehicles DataFrame is not empty
 if not filtered_vehicles.empty:
-    fig_price = px.histogram(filtered_vehicles, x='price')
+    fig_price = px.histogram(filtered_vehicles, x='model')
     st.plotly_chart(fig_price)
 else:
     st.write("No data available for the selected vehicle make.")
