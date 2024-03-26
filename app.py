@@ -27,8 +27,13 @@ filtered_vehicles = vehicles[vehicles['model'] == selected_make]
 
 # Histogram of Price
 st.header('Histogram of Price')
-fig_price = px.histogram(filtered_vehicles, x='price')
-st.plotly_chart(fig_price)
+
+# Check if filtered_vehicles DataFrame is not empty
+if not filtered_vehicles.empty:
+    fig_price = px.histogram(filtered_vehicles, x='price')
+    st.plotly_chart(fig_price)
+else:
+    st.write("No data available for the selected vehicle make.")
 
 # Scatter Plot of Price vs. Mileage
 st.header('Scatter Plot of Price vs. Mileage')
