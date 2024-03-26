@@ -7,8 +7,8 @@ try:
     vehicles = pd.read_csv("/workspaces/Software-Development-Tools-Project/vehicles_us.csv")
 
 except FileNotFoundError:
-    print("File not found")
-    vehicles = pd.read_csv("/Software-Development-Tools-Project/vehicles_us.csv")
+    url = 'https://raw.githubusercontent.com/jouna227/Software-Development-Tools-Project/main/vehicles_us.csv'
+    vehicles = pd.read_csv(url, index_col=0)
 
 # Main title
 st.title('Car Advertisement Dashboard')
