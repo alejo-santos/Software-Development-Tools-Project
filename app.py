@@ -18,22 +18,16 @@ st.header('Dataset Overview')
 # Display dataset
 st.write(vehicles)
 
-# Filter by vehicle make
-selected_make = st.selectbox('Select a Vehicle Make', vehicles['model'].unique())
-filtered_vehicles = vehicles[vehicles['model'] == selected_make]
+# Checkbox to toggle the display of the histogram
+if st.checkbox('Show Mileage Histogram'):
+    st.header('Mileage Distribution')
+    # Create a histogram of vehicle mileage
+    fig_hist = px.histogram(df, x='mileage', title='Mileage Distribution')
+    st.plotly_chart(fig_hist)
 
-# Histogram of Price
-st.header('Histogram of Price')
-fig_price = px.histogram(filtered_vehicles, x='price')
-st.plotly_chart(fig_price)
-
-# Scatter Plot of Price vs. Mileage
-st.header('Scatter Plot of Price vs. Mileage')
-fig_scatter = px.scatter(filtered_vehicles, x='odometer', y='price', title='Price vs. Mileage')
-st.plotly_chart(fig_scatter)
-
-# Checkbox to toggle logarithmic scale for price
-log_scale = st.checkbox('Use Logarithmic Scale for Price')
-if log_scale:
-    fig_scatter.update_yaxes(type="log")
+# Checkbox to toggle the display of the scatter plot
+if st.checkbox('Show Price vs. Mileage Scatter Plot'):
+    st.header('Price vs. Mileage')
+    # Create a scatter plot of price vs. mileage
+    fig_scatter = px.scatter(df, x='mileage', y='price', title='Price vs. Mileage')
     st.plotly_chart(fig_scatter)
