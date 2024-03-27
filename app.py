@@ -30,14 +30,14 @@ st.header('Histogram of Models')
 
 # Check if filtered_vehicles DataFrame is not empty
 if not filtered_vehicles.empty:
-    fig_price = px.histogram(filtered_vehicles, x='model')
+    fig_price = px.histogram(vehicles, x='price')
     st.plotly_chart(fig_price)
 else:
     st.write("No data available for the selected vehicle make.")
 
 # Scatter Plot of Price vs. Mileage
 st.header('Scatter Plot of Price vs. Mileage')
-fig_scatter = px.scatter(filtered_vehicles, x='odometer', y='price', title='Price vs. Mileage')
+fig_scatter = px.scatter(vehicles, x='odometer', y='price', title='Price vs. Mileage')
 st.plotly_chart(fig_scatter)
 
 # Checkbox to toggle logarithmic scale for price
