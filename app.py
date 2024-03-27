@@ -23,20 +23,13 @@ st.write(vehicles)
 selected_make = st.selectbox('Select a Vehicle Make', vehicles['model'].unique())
 
 # Histogram of Price
-st.header('Histogram of Models')
-
-# Check if filtered_vehicles DataFrame is not empty
-if not filtered_vehicles.empty:
-    # Filtered dataset based on selected make
-    filtered_vehicles = vehicles[vehicles['price'] == selected_make]
-    fig_price = px.histogram(filtered_vehicles, x='price')
-    st.plotly_chart(fig_price)
-else:
-    st.write("No data available for the selected vehicle make.")
+st.header('Histogram of Price')
+fig_price = px.histogram(vehicles, x='price')
+st.plotly_chart(fig_price)
 
 # Scatter Plot of Price vs. Mileage
 st.header('Scatter Plot of Price vs. Mileage')
-fig_scatter = px.scatter(filtered_vehicles, x='odometer', y='price', title='Price vs. Mileage')
+fig_scatter = px.scatter(vehicles, x='odometer', y='price', title='Price vs. Mileage')
 st.plotly_chart(fig_scatter)
 
 # Checkbox to toggle logarithmic scale for price
