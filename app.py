@@ -7,7 +7,7 @@ try:
     vehicles = pd.read_csv("/workspaces/Software-Development-Tools-Project/vehicles_us.csv")
 except FileNotFoundError:
     url = 'https://raw.githubusercontent.com/jouna227/Software-Development-Tools-Project/main/vehicles_us.csv'
-    vehicles = pd.read_csv(url, index_col=0)
+    vehicles = pd.read_csv(url)
 
 # Main title
 st.title('Car Advertisement Dashboard')
@@ -20,7 +20,7 @@ st.write(vehicles)
 
 # Filter by vehicle make
 selected_make = st.selectbox('Select a Vehicle Make', vehicles['model'].unique())
-filtered_vehicles = vehicles[vehicles['price'] == selected_make]
+filtered_vehicles = vehicles[vehicles['model'] == selected_make]
 
 # Histogram of Price
 st.header('Histogram of Price')
