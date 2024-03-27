@@ -22,12 +22,12 @@ st.write(vehicles)
 if st.checkbox('Show Mileage Histogram'):
     st.header('Mileage Distribution')
     # Create a histogram of vehicle mileage
-    fig_hist = px.histogram(df, x='mileage', title='Mileage Distribution')
+    fig_hist = px.histogram(vehicles, x='mileage', title='Mileage Distribution')
     st.plotly_chart(fig_hist)
 
 # Checkbox to toggle the display of the scatter plot
 if st.checkbox('Show Price vs. Mileage Scatter Plot'):
     st.header('Price vs. Mileage')
     # Create a scatter plot of price vs. mileage
-    fig_scatter = px.scatter(df, x='mileage', y='price', title='Price vs. Mileage')
+    fig_scatter = px.scatter(vehicles, x='mileage', y='price', title='Price vs. Mileage')
     st.plotly_chart(fig_scatter)
