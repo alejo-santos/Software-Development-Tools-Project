@@ -20,7 +20,7 @@ st.write(vehicles)
 
 # Filter by vehicle make
 selected_make = st.selectbox('Select a Vehicle Make', vehicles['model'].unique())
-filtered_vehicles = vehicles[vehicles['price', 'model_year', 'model', 'condition', 'cylinders', 'fuel', 'odometer', 'transmission', 'type', 'paint_color', 'is_4wd', 'date_posted', 'days_listed'] == selected_make]
+filtered_vehicles = vehicles[vehicles['price'] == selected_make]
 
 # Histogram of Price
 st.header('Histogram of Price')
